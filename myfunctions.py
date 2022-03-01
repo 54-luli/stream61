@@ -6,8 +6,8 @@ import time
 import json
 import os
 
-from imutils.video import VideoStream
-import imutils
+# from imutils.video import VideoStream
+# import imutils
 import numpy as np
 import cv2
 import threading
