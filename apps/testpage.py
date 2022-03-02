@@ -1,7 +1,6 @@
 import streamlit as st
 import myfunctions
 from streamlit_lottie import st_lottie
-from flask import Response
 
 import socket
 
