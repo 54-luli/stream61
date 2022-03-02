@@ -18,6 +18,7 @@ torch==1.8.1
 torchvision==0.9.1
 
 opencv-contrib-python==4.5.5.62
+libgl1-mesa-glx
 
 
 
