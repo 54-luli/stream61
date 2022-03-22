@@ -25,7 +25,7 @@ def intelligent_photographing():
         st.header("实时视频流")
         img_file_buffer = st.camera_input(label="", key='camera1', help="点击底部Take Photo按钮进行拍照")
         if img_file_buffer is not None:
-            cv2_img, img_shape, img_name = myfunctions.get_cv2_img(img_file_buffer)
+            img_shape, img_name = myfunctions.get_cv2_img(img_file_buffer)
             st.write(img_shape)
             st.download_button(label="点击此处下载照片", data=img_file_buffer, file_name=img_name)
         # placeholder = st.empty()
