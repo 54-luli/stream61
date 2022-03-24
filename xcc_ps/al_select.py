@@ -65,23 +65,32 @@ def my_ps():
 
     # 获取结果并整理排序输出结果
     result_rev = sorted(result.items(), key=lambda item: item[1], reverse=True)
-    for i in range(len(result_rev)):
-        print(result_rev[i])
+    # for i in range(len(result_rev)):
+    #     print(result_rev[i])
     model_stop = time.perf_counter()
 
     # 输出并保存优胜次数最高的前2张照片
     # 首先删除输出目录下的旧照片
     del_file(Pic_outPath)
 
-    img = [0, 0]
-    for i in range(len(img)):
+    # img = [0, 0]
+    # for i in range(len(img)):
+    #     name_in = result_rev[i][0]
+    #     name_out = 'out' + result_rev[i][0]
+    #     shutil.copy(Pic_Path + name_in, Pic_outPath + name_out)
+    #     img[i] = cv2.imread(Pic_outPath + name_out)
+
+    out_photo = []
+    for i in range(len(result_rev)):
         name_in = result_rev[i][0]
         name_out = 'out' + result_rev[i][0]
+        out_photo.append(name_out)
         shutil.copy(Pic_Path + name_in, Pic_outPath + name_out)
-        # img[i] = cv2.imread(Pic_outPath + name_out)
 
     stop = time.perf_counter()
-    print('模型计算耗时{:.2f}s,项目总耗时{:.2f}s'.format((model_stop - start), (stop - start)))
+    # print('模型计算耗时{:.2f}s,项目总耗时{:.2f}s'.format((model_stop - start), (stop - start)))
+    return result_rev, out_photo, format((model_stop - start), '.2f'), format((stop - start), '.2f')
+
 
 # if __name__ == "__main__":
 #     start = time.perf_counter()
